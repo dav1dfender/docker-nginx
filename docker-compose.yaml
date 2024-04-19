@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile_web
+    image: dav1dfender/project:web
+    ports:
+      - "8080:80"
+
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile_proxy
+    image: dav1dfender/project:proxy
+    ports:
+      - "80:80"

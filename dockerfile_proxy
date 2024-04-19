@@ -1,0 +1,6 @@
+# As a base I will use nginx:alpine
+FROM nginx:alpine
+# Lets remove default nginx conf
+RUN rm /etc/nginx/conf.d/default.conf
+# Lets replace default conf with our proxy configuration.
+COPY proxy.conf /etc/nginx/conf.d/default.conf
